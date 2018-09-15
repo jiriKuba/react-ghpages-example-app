@@ -2,7 +2,7 @@
   "name": "savings",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jiriKuba.github.io/react-ghpages-example-app",
+  "homepage": "https://jirikuba.github.io/react-ghpages-example-app/",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "react": "^16.5.1",
