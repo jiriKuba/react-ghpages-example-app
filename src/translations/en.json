@@ -1,0 +1,8 @@
+{
+  "savings.containers.LocaleToggle.cs": "cs",
+  "savings.containers.LocaleToggle.en": "en",
+  "savings.containers.LocaleToggle.language": "Language",
+  "savings.containers.NotFoundPage.header": "Page not found.",
+  "savings.containers.HomePage.header": "Calculation",
+  "savings.components.Header.name": "Savings calculation"
+}

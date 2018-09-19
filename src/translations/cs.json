@@ -1,0 +1,8 @@
+{
+  "savings.containers.LocaleToggle.cs": "cz",
+  "savings.containers.LocaleToggle.en": "en",
+  "savings.containers.LocaleToggle.language": "Jazyk",
+  "savings.containers.NotFoundPage.header": "Stránka nenalezena.",
+  "savings.containers.HomePage.header": "Kalkulace",
+  "savings.components.Header.name": "Kalkulace spoření"
+}
