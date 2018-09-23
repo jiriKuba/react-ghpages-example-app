@@ -8,5 +8,8 @@
   "savings.components.CalculationItem.months": "Počet měsíců k dosažení cíle: ",
   "savings.components.CalculationItem.edit": "Upravit",
   "savings.components.CalculationItem.delete": "Smazat",
+  "savings.components.CalculationItem.action": "Možnosti",
+  "savings.components.CalculationAddItemButton.goal": "Cíl",
+  "savings.components.CalculationAddItemButton.add": "Přidat",
   "savings.components.Header.name": "Kalkulace spoření"
 }

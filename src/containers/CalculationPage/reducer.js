@@ -32,7 +32,7 @@ export const initialState = fromJS({
 function calculationProviderReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_CALCULATION_ITEM:
-      return state.set('calculationItems', [...state.calculationItems, action.calculationItem]);
+      return state.set('calculationItems', state.get('calculationItems').push(fromJS(action.calculationItem)));
     case DELETE_CALCULATION_ITEM:
       return state.set('calculationItems', state.get('calculationItems').filter(item => { 
         return item.get('id') !== action.calculationItem.id; 

@@ -18,7 +18,7 @@ export class Calculation extends React.PureComponent {
     return (
       <div>
         <CalculationList items={this.props.calculationItems} onDelete={this.props.onCalculationItemDelete} />
-        <CalculationAddtemButton />
+        <CalculationAddtemButton onCreate={this.props.onCalculationItemAdd} />
       </div>
     );
   }
@@ -34,6 +34,7 @@ Calculation.propTypes = {
     }).isRequired
   ).isRequired,
   onCalculationItemDelete: PropTypes.func.isRequired,
+  onCalculationItemAdd: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createSelector(makeSelectItems(), calculationItems => ({

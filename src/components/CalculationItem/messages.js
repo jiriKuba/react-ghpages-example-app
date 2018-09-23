@@ -26,4 +26,8 @@ export default defineMessages({
     id: 'savings.components.CalculationItem.delete',
     defaultMessage: 'Delete',
   },
+  action: {
+    id: 'savings.components.CalculationItem.action',
+    defaultMessage: 'Action',
+  },
 });

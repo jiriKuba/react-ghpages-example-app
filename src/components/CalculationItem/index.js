@@ -19,25 +19,12 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-const styles = theme => ({
+const styles = () => ({
   card: {
     maxWidth: 400,
   },
   actions: {
     display: 'flex',
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-    marginLeft: 'auto',
-    [theme.breakpoints.up('sm')]: {
-      marginRight: -8,
-    },
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
   },
   cardHeader: {
     alignItems: 'start',
@@ -82,7 +69,7 @@ class CalculationItem extends React.Component {
           action = {
             <div>
               <IconButton 
-                aria-label="More"
+                aria-label={intl.formatMessage(messages.action)}
                 aria-owns={open ? 'long-menu' : null}
                 aria-haspopup="true"
                 onClick={this.handleClick}
