@@ -20,7 +20,8 @@ const AppWrapper = styled.div`
   margin: 0 auto;
   min-height: 100%;
 `;
-// export default withRoot(withStyles(styles)(Index));
+
+// TODO: title localization
 export default materialTheme(function App() {
   return (
     <AppWrapper>

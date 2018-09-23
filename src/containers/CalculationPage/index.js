@@ -9,6 +9,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { makeSelectItems } from './selectors';
 import PropTypes from 'prop-types';
+import CalculationResult from '../../components/CalculationResult';
 import CalculationList from '../../components/CalculationList';
 import CalculationAddtemButton from '../../components/CalculationAddtemButton';
 import { deleteCalculationItem, addCalculationItem } from './actions';
@@ -17,6 +18,7 @@ export class Calculation extends React.PureComponent {
   render() {
     return (
       <div>
+        <CalculationResult items={this.props.calculationItems} />
         <CalculationList items={this.props.calculationItems} onDelete={this.props.onCalculationItemDelete} />
         <CalculationAddtemButton onCreate={this.props.onCalculationItemAdd} />
       </div>
