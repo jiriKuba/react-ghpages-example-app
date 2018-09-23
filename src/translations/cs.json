@@ -3,6 +3,10 @@
   "savings.containers.LocaleToggle.en": "en",
   "savings.containers.LocaleToggle.language": "Jazyk",
   "savings.containers.NotFoundPage.header": "Stránka nenalezena.",
-  "savings.containers.HomePage.header": "Kalkulace",
+  "savings.components.CalculationItem.currency": "CZK",
+  "savings.components.CalculationItem.price": "Cena cíle: ",
+  "savings.components.CalculationItem.months": "Počet měsíců k dosažení cíle: ",
+  "savings.components.CalculationItem.edit": "Upravit",
+  "savings.components.CalculationItem.delete": "Smazat",
   "savings.components.Header.name": "Kalkulace spoření"
 }

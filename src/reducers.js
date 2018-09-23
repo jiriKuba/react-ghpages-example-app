@@ -8,6 +8,7 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 
 import globalReducer from './containers/App/reducer';
 import languageProviderReducer from './containers/LanguageProvider/reducer';
+import calculationPageReducer from './containers/CalculationPage/reducer';
 
 /*
  * routeReducer
@@ -44,6 +45,7 @@ export default function createReducer() {
   return combineReducers({
     route: routeReducer,
     global: globalReducer,
-    language: languageProviderReducer
+    language: languageProviderReducer,
+    calculation: calculationPageReducer
   });
 }

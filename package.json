@@ -10,6 +10,7 @@
     "immutable": "^3.8.2",
     "intl": "^1.2.5",
     "react": "^16.5.1",
+    "react-currency-formatter": "^1.1.0",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.5.0",

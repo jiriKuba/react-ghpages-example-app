@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 // import HomePage from './containers/HomePage/Loadable';
-import HomePage from '../HomePage/Loadable';
+import CalculationPage from '../CalculationPage/Loadable';
 import NotFoundPage from '../NotFoundPage/Loadable';
 import Header from '../../components/Header';
 import materialTheme from '../../components/MaterialTheme';
@@ -32,7 +32,7 @@ export default materialTheme(function App() {
       </Helmet>
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={CalculationPage} />
         {/* <Route path="/about" component={AboutPage} /> */}
         <Route path="" component={NotFoundPage} />
       </Switch>

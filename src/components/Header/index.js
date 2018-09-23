@@ -26,15 +26,15 @@ class Header extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="title" color="inherit" className={classes.grow}>
-            <FormattedMessage {...messages.name} />
-          </Typography>
-          <LocaleToggle />         
-        </Toolbar>
-      </AppBar>
-    </div>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="title" color="inherit" className={classes.grow}>
+              <FormattedMessage {...messages.name} />
+            </Typography>
+            <LocaleToggle />         
+          </Toolbar>
+        </AppBar>
+      </div>
     );
   }
 }
@@ -43,5 +43,4 @@ Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-// export default Header;
 export default withStyles(styles)(Header);

@@ -3,6 +3,10 @@
   "savings.containers.LocaleToggle.en": "en",
   "savings.containers.LocaleToggle.language": "Language",
   "savings.containers.NotFoundPage.header": "Page not found.",
-  "savings.containers.HomePage.header": "Calculation",
+  "savings.components.CalculationItem.currency": "USD",
+  "savings.components.CalculationItem.price": "Goal price: ",
+  "savings.components.CalculationItem.months": "Months to achieve goal: ",
+  "savings.components.CalculationItem.edit": "Edit",
+  "savings.components.CalculationItem.delete": "Delete",
   "savings.components.Header.name": "Savings calculation"
 }
