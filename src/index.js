@@ -49,13 +49,4 @@ if (!window.Intl) {
 } else {
   render(translationMessages);
 }
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <LanguageProvider messages={messages}>
-//         <ConnectedRouter history={history}>
-//           <App />
-//         </ConnectedRouter>
-//       </LanguageProvider>
-//   </Provider>, document.getElementById('root'));
 registerServiceWorker();

@@ -5,17 +5,55 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
-import H1 from '../../components/H1';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import messages from './messages';
 
-export default function NotFound() {
+const styles = {
+  card: {
+    flexGrow: 1,
+    margin: 'auto',
+    marginTop: '15px',
+    maxWidth: '512px'
+  },
+  media: {
+    width: 'auto',
+    margin: 'auto'
+  },
+};
+
+function NotFound(props) {
+  const { classes, intl } = props;
   return (
-    <article>
-      <H1>
-        <FormattedMessage {...messages.header} />
-      </H1>
-    </article>
+    <Card className={classes.card}>
+      <CardMedia
+        component="img"
+        className={classes.media}
+        height="512"
+        image="/images/pig_crash.png"
+        title={intl.formatMessage(messages.image)}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="headline" component="h1">
+          <FormattedMessage {...messages.header} />
+        </Typography>
+        <Typography component="p">
+        <FormattedMessage {...messages.description} />
+        </Typography>        
+      </CardContent>
+    </Card>
   );
 }
+
+NotFound.propTypes = {
+  classes: PropTypes.object.isRequired,
+  intl: intlShape.isRequired,
+};
+
+export default withStyles(styles)(injectIntl(NotFound));

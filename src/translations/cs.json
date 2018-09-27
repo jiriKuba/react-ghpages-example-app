@@ -3,6 +3,8 @@
   "savings.containers.LocaleToggle.en": "en",
   "savings.containers.LocaleToggle.language": "Jazyk",
   "savings.containers.NotFoundPage.header": "Stránka nenalezena.",
+  "savings.containers.NotFoundPage.imageAlt": "Rozbité prasátko",
+  "savings.containers.NotFoundPage.description": "Rozbili jste to! :(",
   "savings.components.CalculationItem.currency": "CZK",
   "savings.components.CalculationItem.price": "Cena cíle: ",
   "savings.components.CalculationItem.months": "Počet měsíců k dosažení cíle: ",

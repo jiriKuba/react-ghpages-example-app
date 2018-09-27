@@ -3,6 +3,8 @@
   "savings.containers.LocaleToggle.en": "en",
   "savings.containers.LocaleToggle.language": "Language",
   "savings.containers.NotFoundPage.header": "Page not found.",
+  "savings.containers.NotFoundPage.imageAlt": "Broken piggy bank",
+  "savings.containers.NotFoundPage.description": "You broke it! :(",
   "savings.components.CalculationItem.currency": "USD",
   "savings.components.CalculationItem.price": "Goal price: ",
   "savings.components.CalculationItem.months": "Months to achieve the goal: ",

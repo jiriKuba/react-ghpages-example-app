@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-import { generateGuid } from '../../utils/guid';
+import Tooltip from '@material-ui/core/Tooltip';
 import { injectIntl, intlShape } from 'react-intl';
 import messages from './messages';
+import { newItem } from './new';
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
+    position: 'fixed',
+    bottom: theme.spacing.unit * 2,
+    right: theme.spacing.unit * 3,
   },
 });
 
@@ -22,18 +25,13 @@ class CalculationAddtemButton extends React.Component {
 
   handleClick() {
     const { onCreate, intl } = this.props;
-    onCreate({
-      id: generateGuid(),
-      name: intl.formatMessage(messages.goal),
-      price: 0,
-      months: 0
-    });
+    onCreate(newItem(intl, messages.goal));
   }
 
   render() {
     const { classes, intl } = this.props;
     return (
-      <div>
+      <Tooltip title={intl.formatMessage(messages.add)}>
         <Button 
           variant="fab" 
           color="primary" 
@@ -42,7 +40,7 @@ class CalculationAddtemButton extends React.Component {
           onClick={this.handleClick}>
           <AddIcon />
         </Button>
-      </div>
+      </Tooltip>
     );
   }
 }

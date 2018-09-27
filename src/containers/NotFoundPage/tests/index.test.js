@@ -6,7 +6,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { FormattedMessage } from 'react-intl';
 
-import H1 from 'components/H1';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 import NotFound from '../index';
 
 describe('<NotFound />', () => {
@@ -14,13 +16,21 @@ describe('<NotFound />', () => {
     const renderedComponent = shallow(<NotFound />);
     expect(
       renderedComponent.contains(
-        <H1>
-          <FormattedMessage
-            id="boilerplate.containers.NotFoundPage.header"
-            defaultMessage="Page not found."
-          />
-        </H1>,
-      ),
+        <Card>
+          <CardContent>
+            <Typography>
+              <FormattedMessage 
+              id="savings.containers.NotFoundPage.header"
+              defaultMessage="Page not found."/>
+            </Typography>
+            <Typography component="p">
+            <FormattedMessage 
+              id="savings.containers.NotFoundPage.description"
+              defaultMessage="You broke it! :(" />
+            </Typography>        
+          </CardContent>
+        </Card>
+      )
     ).toEqual(true);
   });
 });
