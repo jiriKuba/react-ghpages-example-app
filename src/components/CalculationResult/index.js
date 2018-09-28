@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Wrapper from './Wrapper';
 import { calculate } from './calculation';
-import CurrencyFormatter  from 'react-currency-formatter';
+import CalculationResultList from './list';
 import messages from './messages';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
@@ -21,7 +21,7 @@ const styles = {
 
 function CalculationResult(props) {
   const { classes, items, intl } = props;
-  const calculation = calculate(items);
+  const calculationItems = calculate(items);
   return (    
     <Wrapper>
       <Card className={classes.card}>
@@ -31,14 +31,7 @@ function CalculationResult(props) {
           </Typography>
           <Typography component="p">
             <FormattedMessage {...messages.savingLabel} />
-            <b>
-              <CurrencyFormatter
-                  quantity={calculation.price || 0}
-                  currency={intl.formatMessage(messages.currency)}
-              />
-            </b>
-            <FormattedMessage {...messages.savingForLabel} />
-            <b>{`1. - ${calculation.months || 1}. ${intl.formatMessage(messages.months)}.`}</b>
+            <CalculationResultList items={calculationItems} intl={intl}  messages={messages} />
           </Typography>
         </CardContent>
       </Card>

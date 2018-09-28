@@ -8,6 +8,8 @@ This is ReactJS example app based on [react-boilerplate](https://github.com/reac
 
 App will calculate minimal amount of money you should monthly save for your wishes.
 
+Page preview on [Github pages](https://jirikuba.github.io/react-ghpages-example-app/)
+
 ## Getting Started
 
 1. Run install `npm install`

@@ -17,7 +17,7 @@
   "savings.components.CalculationItem.edit.price": "Price[$]",
   "savings.components.CalculationItem.edit.name": "Name",
   "savings.components.CalculationResult.header": "Your current savings",
-  "savings.components.CalculationResult.savingLabel": "You should save ",
+  "savings.components.CalculationResult.savingLabel": "You should save: ",
   "savings.components.CalculationResult.savingForLabel": " for ",
   "savings.components.CalculationResult.months": "months",
   "savings.components.CalculationInfo.image": "Piggy bank",

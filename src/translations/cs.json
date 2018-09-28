@@ -17,7 +17,7 @@
   "savings.components.CalculationItem.edit.price": "Cena[Kč]",
   "savings.components.CalculationItem.edit.name": "Název",
   "savings.components.CalculationResult.header": "Výpočet spoření",
-  "savings.components.CalculationResult.savingLabel": "Měli byste si ukládat ",
+  "savings.components.CalculationResult.savingLabel": "Měli byste si ukládat: ",
   "savings.components.CalculationResult.savingForLabel": " na dobu ",
   "savings.components.CalculationResult.months": "měsíců",
   "savings.components.CalculationInfo.image": "Prasátko",

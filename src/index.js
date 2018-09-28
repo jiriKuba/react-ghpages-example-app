@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from "react-redux";
 import { ConnectedRouter } from 'react-router-redux';
+import { BrowserRouter } from 'react-router-dom';
 import configureStore from './configureStore';
 import App from "./containers/App";
 import LanguageProvider from './containers/LanguageProvider';
@@ -23,7 +24,9 @@ const render = messages => {
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <App />
+          </BrowserRouter>
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,

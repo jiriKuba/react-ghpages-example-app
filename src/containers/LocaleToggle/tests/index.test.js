@@ -36,7 +36,7 @@ describe('<LocaleToggle />', () => {
         </LanguageProvider>
       </Provider>
     );
-    expect(renderedComponent.contains(<option value="en">en</option>)).toBe(
+    expect(renderedComponent.contains(<div><div><div><div><span>en</span></div></div></div></div>)).toBe(
       true
     );
   });

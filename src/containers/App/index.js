@@ -10,7 +10,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
-// import HomePage from './containers/HomePage/Loadable';
 import CalculationPage from '../CalculationPage/Loadable';
 import NotFoundPage from '../NotFoundPage/Loadable';
 import Header from '../../components/Header';
@@ -34,7 +33,6 @@ export default materialTheme(function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={CalculationPage} />
-        {/* <Route path="/about" component={AboutPage} /> */}
         <Route path="" component={NotFoundPage} />
       </Switch>
     </AppWrapper>
