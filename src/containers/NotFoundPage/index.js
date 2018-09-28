@@ -24,7 +24,7 @@ const styles = {
     maxWidth: '512px'
   },
   media: {
-    width: 'auto',
+    height: 'auto',
     margin: 'auto'
   },
 };
@@ -33,6 +33,11 @@ function NotFound(props) {
   const { classes, intl } = props;
   return (
     <Card className={classes.card}>
+      <CardContent>
+        <Typography gutterBottom variant="headline" component="h1">
+          <FormattedMessage {...messages.header} />
+        </Typography>       
+      </CardContent>
       <CardMedia
         component="img"
         className={classes.media}
@@ -41,11 +46,8 @@ function NotFound(props) {
         title={intl.formatMessage(messages.image)}
       />
       <CardContent>
-        <Typography gutterBottom variant="headline" component="h1">
-          <FormattedMessage {...messages.header} />
-        </Typography>
         <Typography component="p">
-        <FormattedMessage {...messages.description} />
+          <FormattedMessage {...messages.description} />
         </Typography>        
       </CardContent>
     </Card>
