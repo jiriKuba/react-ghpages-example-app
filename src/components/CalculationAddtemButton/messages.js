@@ -1,7 +1,7 @@
 /*
- * CalculationItem Messages
+ * CalculationAddItemButton Messages
  *
- * This contains all the text for the CalculationItem component.
+ * This contains all the text for the CalculationAddItemButton component.
  */
 import { defineMessages } from 'react-intl';
 

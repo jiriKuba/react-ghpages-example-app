@@ -1,7 +1,7 @@
 import React from 'react';
-import CalculationItem from '../CalculationItem';
 import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
+import CalculationItem from '../CalculationItem';
+import Wrapper from './Wrapper';
 
 class CalculationList extends React.Component {
   render() {
@@ -20,9 +20,9 @@ class CalculationList extends React.Component {
       ));
     }
     return (
-      <Grid item xs={12} md={8} container direction="row" spacing={8}>
+      <Wrapper>
         { itemViews }
-      </Grid>
+      </Wrapper>
     );
   }
 }

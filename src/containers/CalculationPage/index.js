@@ -12,6 +12,8 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import CalculationResult from '../../components/CalculationResult';
+import CalculationInfo from '../../components/CalculationResult/info';
+import ResponsiveMargin from '../../components/CalculationResult/Margin';
 import CalculationList from '../../components/CalculationList';
 import CalculationAddtemButton from '../../components/CalculationAddtemButton';
 import { deleteCalculationItem, addCalculationItem, 
@@ -27,21 +29,26 @@ const styles = () => ({
 });
 export class Calculation extends React.PureComponent {
   render() {
-    const {classes} = this.props;
+    const {classes, calculationItems} = this.props;
     return (
       <div className={classes.root}>
         <Grid container spacing={24} direction="row">
-          <Grid item xs={false} sm={2}></Grid>
-          <CalculationResult items={this.props.calculationItems} />
-          <Grid item xs={false} sm={2}></Grid>
+          <ResponsiveMargin />
+          <CalculationInfo />
+          <ResponsiveMargin />
 
-          <Grid item xs={false} sm={2}></Grid>
+          <ResponsiveMargin />
+          <CalculationResult items={calculationItems} />
+          <ResponsiveMargin />
+
+          <ResponsiveMargin />
           <CalculationList 
-            items={this.props.calculationItems} 
+            items={calculationItems} 
             onDelete={this.props.onCalculationItemDelete} 
             onEdit={this.props.onCalculationItemEdit} 
             onSave={this.props.onCalculationItemSave} />
-          <Grid item xs={false} sm={2}></Grid>
+          <ResponsiveMargin />
+
           <CalculationAddtemButton onCreate={this.props.onCalculationItemAdd} />
         </Grid>
       </div>

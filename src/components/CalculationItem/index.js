@@ -6,7 +6,6 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -20,16 +19,16 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
 import Edit  from './edit';
 import Detail  from './detail';
+import Wrapper  from './Wrapper';
 
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
+import { isInvalid } from './validator';
 
 const styles = theme => ({
-  card: {
-  },
   actions: {
     display: 'flex',
   },
@@ -58,6 +57,7 @@ class CalculationItem extends React.Component {
         editing: props.item.editing,
         price: props.item.price === 0 ? '' : props.item.price,
         months: props.item.months === 0 ? '' : props.item.months,
+        isInvalid: isInvalid(props.item)
       }
     };
 
@@ -107,6 +107,7 @@ class CalculationItem extends React.Component {
         editing: item.editing,
         price: item.price,
         months: item.months,
+        isInvalid: item.isInvalid,
       }
     });
   }
@@ -124,74 +125,74 @@ class CalculationItem extends React.Component {
     }
 
     return (
-      <Grid item xs={12} lg={4} md={4} sm={4}>
-      <Card className={classes.card}>
-        <CardHeader className={classes.cardHeader}
-          avatar = {
-            <Avatar>
-              {item.name[0]}
-            </Avatar>
-          }
-          action = {
-            <div>
-              <IconButton 
-                aria-label={intl.formatMessage(messages.action)}
-                aria-owns={open ? 'long-menu' : null}
-                aria-haspopup="true"
-                onClick={this.handleClick}
-              >
-                <MoreVertIcon />
-              </IconButton>
-              <Menu
-                id="long-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={this.handleClose}
-                PaperProps={{
-                  style: {
-                    width: 200,
-                  },
-                }}
+      <Wrapper>
+        <Card>
+          <CardHeader className={classes.cardHeader}
+            avatar = {
+              <Avatar>
+                {item.name[0]}
+              </Avatar>
+            }
+            action = {
+              <div>
+                <IconButton 
+                  aria-label={intl.formatMessage(messages.action)}
+                  aria-owns={open ? 'long-menu' : null}
+                  aria-haspopup="true"
+                  onClick={this.handleClick}
                 >
-                {!item.editing && <MenuItem className={classes.menuItem} onClick={this.handleEdit}>
-                  <ListItemIcon className={classes.icon}>
-                    <EditIcon />
-                  </ListItemIcon>
-                  <ListItemText classes={{ primary: classes.primary }} inset>
-                    <FormattedMessage {...messages.edit} />
-                  </ListItemText>
-                </MenuItem>}
-                <MenuItem className={classes.menuItem} onClick={this.handleDelete}>
-                  <ListItemIcon className={classes.icon}>
-                    <DeleteIcon />
-                  </ListItemIcon>
-                  <ListItemText classes={{ primary: classes.primary }} inset>
-                    <FormattedMessage {...messages.delete} />                  
-                  </ListItemText>
-                </MenuItem>
-              </Menu>
-            </div>            
-          }
-          title = {
-            <Typography gutterBottom variant="headline" component="h2">
-              {item.name}
-            </Typography>         
-          }
-          subheader = {content}
-        />
-        {item.editing && <CardActions className={classes.actions}>
-          <Button size="small" color="primary" className={classes.rightButton} onClick={this.handleSave}>
-            <SaveIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
-            Save
-          </Button>
+                  <MoreVertIcon />
+                </IconButton>
+                <Menu
+                  id="long-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={this.handleClose}
+                  PaperProps={{
+                    style: {
+                      width: 200,
+                    },
+                  }}
+                  >
+                  {!item.editing && <MenuItem className={classes.menuItem} onClick={this.handleEdit}>
+                    <ListItemIcon className={classes.icon}>
+                      <EditIcon />
+                    </ListItemIcon>
+                    <ListItemText classes={{ primary: classes.primary }} inset>
+                      <FormattedMessage {...messages.edit} />
+                    </ListItemText>
+                  </MenuItem>}
+                  <MenuItem className={classes.menuItem} onClick={this.handleDelete}>
+                    <ListItemIcon className={classes.icon}>
+                      <DeleteIcon />
+                    </ListItemIcon>
+                    <ListItemText classes={{ primary: classes.primary }} inset>
+                      <FormattedMessage {...messages.delete} />                  
+                    </ListItemText>
+                  </MenuItem>
+                </Menu>
+              </div>            
+            }
+            title = {
+              <Typography gutterBottom variant="headline" component="h2">
+                {item.name}
+              </Typography>         
+            }
+            subheader = {content}
+          />
+          {item.editing && <CardActions className={classes.actions}>
+            <Button size="small" color="primary" className={classes.rightButton} onClick={this.handleSave} disabled={this.state.item.isInvalid}>
+              <SaveIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
+              <FormattedMessage {...messages.save} />
+            </Button>
 
-          <Button size="small" color="primary" className={classes.rightButton} onClick={this.handleCancelEdit}>
-            <CancelIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
-            Cancel
-          </Button>
-        </CardActions>}
-      </Card>
-      </Grid>
+            <Button size="small" color="primary" className={classes.rightButton} onClick={this.handleCancelEdit}>
+              <CancelIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
+              <FormattedMessage {...messages.cancel} />
+            </Button>
+          </CardActions>}
+        </Card>
+      </Wrapper>
     );
   }
 }

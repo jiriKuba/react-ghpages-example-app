@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CurrencyFormatter  from 'react-currency-formatter';
-import { FormattedMessage } from 'react-intl';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
+import { isInvalid } from './validator';
 
 const styles = theme => ({
   container: {
@@ -39,8 +38,13 @@ class Edit extends React.Component  {
 
   handleChange(event) {
     const { itemChanged } = this.props;
+    let newValue = event.target.value;
+    if (event.target.name === 'price' || event.target.name === 'months') {
+      newValue = Number(event.target.value);
+    }
+
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: newValue,
     });
 
     const stateItem = {
@@ -50,7 +54,10 @@ class Edit extends React.Component  {
       price: this.state.price,
       months: this.state.months,
     };
-    stateItem[event.target.name] = event.target.value;
+
+    stateItem[event.target.name] = newValue;
+    stateItem.isInvalid = isInvalid(stateItem);
+
     itemChanged(stateItem);
   }
 
@@ -59,8 +66,9 @@ class Edit extends React.Component  {
     return (
       <form className={classes.container} noValidate autoComplete="off">
         <TextField
+            error={!this.state.name}
             id="standard-name"
-            label="Name"
+            label={intl.formatMessage(messages.editName)}
             className={classes.textField}
             value={this.state.name}
             name={'name'}
@@ -69,8 +77,9 @@ class Edit extends React.Component  {
             variant="filled"
           />
         <TextField
+            error={!this.state.price}
             id="standard-price"
-            label="Price[$]"
+            label={intl.formatMessage(messages.editPrice)}
             className={classes.textField}
             value={this.state.price}
             name={'price'}
@@ -80,8 +89,9 @@ class Edit extends React.Component  {
             variant="filled"
           />
         <TextField
+            error={!this.state.months}
             id="standard-months"
-            label="Month count"
+            label={intl.formatMessage(messages.editMonth)}
             className={classes.textField}
             value={this.state.months}
             name={'months'}
@@ -98,6 +108,8 @@ class Edit extends React.Component  {
 Edit.propTypes = {
   classes: PropTypes.object.isRequired,
   itemChanged: PropTypes.func.isRequired,
+  intl: PropTypes.object.isRequired,
+  messages: PropTypes.object.isRequired,
   item: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

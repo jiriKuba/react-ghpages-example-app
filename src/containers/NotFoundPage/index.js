@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import messages from './messages';
+import image from '../../images/pig_crash.png';
 
 const styles = {
   card: {
@@ -36,7 +37,7 @@ function NotFound(props) {
         component="img"
         className={classes.media}
         height="512"
-        image="/images/pig_crash.png"
+        image={image}
         title={intl.formatMessage(messages.image)}
       />
       <CardContent>
