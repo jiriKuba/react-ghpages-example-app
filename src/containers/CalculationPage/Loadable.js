@@ -1,5 +1,5 @@
 /**
- * Asynchronously loads the component for HomePage
+ * Asynchronously loads the component for CalculationPage
  */
 import Loadable from 'react-loadable';
 import LoadingIndicator from '../../components/LoadingIndicator';

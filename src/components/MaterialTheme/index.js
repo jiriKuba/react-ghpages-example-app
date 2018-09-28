@@ -1,3 +1,9 @@
+/**
+ *
+ * MaterialTheme component
+ * 
+ */
+
 import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import teal from '@material-ui/core/colors/teal';

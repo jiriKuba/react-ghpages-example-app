@@ -1,6 +1,6 @@
 /*
  *
- * CalculationProvider reducer
+ * CalculationPage reducer
  *
  */
 

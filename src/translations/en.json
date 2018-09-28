@@ -1,4 +1,7 @@
 {
+  "savings.containers.App.title": "Savings calculation",
+  "savings.containers.App.titleTemplate": "%s - Savings calculation",
+  "savings.containers.App.description": "A savings calculation application",
   "savings.containers.LocaleToggle.cs": "cs",
   "savings.containers.LocaleToggle.en": "en",
   "savings.containers.LocaleToggle.language": "Language",

@@ -14,21 +14,23 @@ import CalculationPage from '../CalculationPage/Loadable';
 import NotFoundPage from '../NotFoundPage/Loadable';
 import Header from '../../components/Header';
 import materialTheme from '../../components/MaterialTheme';
+import { injectIntl, intlShape } from 'react-intl';
+import messages from './messages';
 
 const AppWrapper = styled.div`
   margin: 0 auto;
   min-height: 100%;
 `;
 
-// TODO: title localization
-export default materialTheme(function App() {
+function App(props) {
+  const { intl } = props;
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - Savings calculation"
-        defaultTitle="Savings calculation"
+        titleTemplate={intl.formatMessage(messages.titleTemplate)}
+        defaultTitle={intl.formatMessage(messages.title)}
       >
-        <meta name="description" content="A savings calculation application" />
+        <meta name="description" content={intl.formatMessage(messages.description)} />
       </Helmet>
       <Header />
       <Switch>
@@ -37,4 +39,10 @@ export default materialTheme(function App() {
       </Switch>
     </AppWrapper>
   );
-});
+}
+
+App.propTypes = {
+  intl: intlShape.isRequired
+};
+
+export default materialTheme(injectIntl(App));

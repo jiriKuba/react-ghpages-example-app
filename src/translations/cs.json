@@ -1,4 +1,7 @@
 {
+  "savings.containers.App.title": "Kalkulace spoření",
+  "savings.containers.App.titleTemplate": "%s - Kalkulace spoření",
+  "savings.containers.App.description": "Aplikace pro výpočet měsíční částky spoření",
   "savings.containers.LocaleToggle.cs": "cz",
   "savings.containers.LocaleToggle.en": "en",
   "savings.containers.LocaleToggle.language": "Jazyk",

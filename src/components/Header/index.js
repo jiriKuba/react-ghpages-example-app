@@ -1,3 +1,8 @@
+/**
+ *
+ * Header component
+ * 
+ */
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import AppBar from '@material-ui/core/AppBar';
