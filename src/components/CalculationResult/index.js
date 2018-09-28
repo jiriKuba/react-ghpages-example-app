@@ -31,6 +31,8 @@ function CalculationResult(props) {
           </Typography>
           <Typography component="p">
             <FormattedMessage {...messages.savingLabel} />
+          </Typography>
+          <Typography component="div">
             <CalculationResultList items={calculationItems} intl={intl}  messages={messages} />
           </Typography>
         </CardContent>

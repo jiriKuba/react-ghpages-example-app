@@ -11,19 +11,49 @@ import { ADD_CALCULATION_ITEM, DELETE_CALCULATION_ITEM,
 
 export const initialState = fromJS({
   calculationItems: [{
-    id: 'a1cb6ab3-1851-4a81-aa9f-08f88bb654f6',
-    name: 'Notebook',
-    price: 60000,
-    months: 12,
-    editing: false,
-  },
-  {
-    id: 'e2211635-d5f3-4def-8391-6e34d2c9ca87',
-    name: 'Mobil',
-    price: 9000,
-    months: 24,
-    editing: false,
-  }],
+      id: '8fd557e9-9af1-0ac0-db87-55402471dee1',
+      name: '',
+      price: 0,
+      months: 0,
+      editing: true,
+    }],
+  // case 1
+  // calculationItems: [{
+  //   id: 'a1cb6ab3-1851-4a81-aa9f-08f88bb654f6',
+  //   name: 'Notebook',
+  //   price: 60000,
+  //   months: 12,
+  //   editing: false,
+  // },
+  // {
+  //   id: 'e2211635-d5f3-4def-8391-6e34d2c9ca87',
+  //   name: 'Mobil',
+  //   price: 9000,
+  //   months: 24,
+  //   editing: false,
+  // }],
+  // case 2
+  // calculationItems: [{
+  //   id: 'a1cb6ab3-1851-4a81-aa9f-08f88bb654f6',
+  //   name: 'Auto',
+  //   price: 400000,
+  //   months: 60,
+  //   editing: false,
+  // },
+  // {
+  //   id: 'e2211635-d5f3-4def-8391-6e34d2c9ca87',
+  //   name: 'Mobil',
+  //   price: 8000,
+  //   months: 12,
+  //   editing: false,
+  // },
+  // {
+  //   id: '0e01ccd2-e2d9-41c5-a6d7-17bc81c62af8',
+  //   name: 'Dovolená',
+  //   price: 30000,
+  //   months: 10,
+  //   editing: false,
+  // }],
 });
 
 function calculationProviderReducer(state = initialState, action) {

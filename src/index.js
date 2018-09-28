@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from "react-redux";
 import { ConnectedRouter } from 'react-router-redux';
-import { BrowserRouter } from 'react-router-dom';
 import configureStore from './configureStore';
 import App from "./containers/App";
 import LanguageProvider from './containers/LanguageProvider';
@@ -15,7 +14,7 @@ import { translationMessages } from './i18n';
 
 // Create redux store with history
 const initialState = {};
-const history = createHistory();
+const history = createHistory({ basename: process.env.PUBLIC_URL });
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('root');
 
@@ -24,9 +23,7 @@ const render = messages => {
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <App />
-          </BrowserRouter>
+          <App />
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,

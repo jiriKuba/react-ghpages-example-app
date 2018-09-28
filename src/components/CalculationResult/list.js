@@ -18,9 +18,9 @@ class CalculationResultList extends React.Component {
       ));
     }
     return (
-      <div>
-        { itemViews }
-      </div>
+      <ul>
+        { itemViews }        
+      </ul>
     );
   }
 }
@@ -30,7 +30,7 @@ CalculationResultList.propTypes = {
   messages: PropTypes.object.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      index: PropTypes.number.isRequired,
+      index: PropTypes.string.isRequired,
       interval: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
     }).isRequired
