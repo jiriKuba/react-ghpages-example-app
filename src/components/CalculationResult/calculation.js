@@ -18,7 +18,8 @@ export function calculate(items) {
     result[key] = {
       index: key,
       price: 0,
-      months: 0
+      months: 0,
+      interval: ''
     };
     let priceSum = 0;
     for (let itemIndex = 0; itemIndex < intervalItems.length; itemIndex++) {
