@@ -17,15 +17,15 @@ const csTranslationMessages = require('./translations/cs.json'); //eslint-disabl
 addLocaleData(enLocaleData);
 addLocaleData(csLocaleData);
 
-const DEFAULT_LOCALE = 'en';
+export const DEFAULT_LOCALE = 'en';
 
 // prettier-ignore
-const appLocales = [
+export const appLocales = [
   'en',
   'cs',
 ];
 
-const formatTranslationMessages = (locale, messages) => {
+export const formatTranslationMessages = (locale, messages) => {
   const defaultFormattedMessages =
     locale !== DEFAULT_LOCALE
       ? formatTranslationMessages(DEFAULT_LOCALE, enTranslationMessages)
@@ -40,12 +40,12 @@ const formatTranslationMessages = (locale, messages) => {
   return Object.keys(messages).reduce(flattenFormattedMessages, {});
 };
 
-const translationMessages = {
+export const translationMessages = {
   en: formatTranslationMessages('en', enTranslationMessages),
   cs: formatTranslationMessages('cs', csTranslationMessages),
 };
 
-exports.appLocales = appLocales; //eslint-disable-line
-exports.formatTranslationMessages = formatTranslationMessages; //eslint-disable-line
-exports.translationMessages = translationMessages; //eslint-disable-line
-exports.DEFAULT_LOCALE = DEFAULT_LOCALE; //eslint-disable-line
+// exports.appLocales = appLocales; //eslint-disable-line
+// exports.formatTranslationMessages = formatTranslationMessages; //eslint-disable-line
+// exports.translationMessages = translationMessages; //eslint-disable-line
+// exports.DEFAULT_LOCALE = DEFAULT_LOCALE; //eslint-disable-line
